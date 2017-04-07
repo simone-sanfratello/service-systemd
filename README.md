@@ -99,7 +99,6 @@ v. 3.0.0
 - test tdd
 - jsdoc documentation
 - test bdd
-- split README in doc directory
 - rollback on error during ``add``
 - run multiple instances
 - check input settings usign ``checkv``
