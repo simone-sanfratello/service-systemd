@@ -1,0 +1,49 @@
+{
+  "name": "service-systemd",
+  "version": "3.1.0",
+  "description": "Setup node.js app as systemd service",
+  "files": [
+    "bin/*",
+    "lib/*",
+    "index.js"
+  ],
+  "bin": {
+    "service-systemd": "bin/main.js"
+  },
+  "keywords": [
+    "systemd",
+    "service",
+    "deploy"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "a-toolbox": "^0.1.x",
+    "child-process-promise": "^2.x",
+    "commander": "^2.x",
+    "fs-extra-promise": "^0.4.x",
+    "log-segment": "^1.x"
+  },
+  "devDependencies": {
+    "standard": "^x",
+    "tap": "^x",
+    "vows": "^x"
+  },
+  "scripts": {
+    "test": "standard && tap test/tdd/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/braceslab/service-systemd.git"
+  },
+  "author": "Simone Sanfratello <simone@braceslab.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 4"
+  },
+  "preferGlobal": true,
+  "os": [
+    "linux"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "app0-full-node",
+  "description": "an amazing service",
+  "author": "John Smith",
+  "cwd": "test/samples/apps/",
+  "user": "www-data",
+  "group": "www-data",
+  "env": {
+    "PORT": "3001",
+    "ENV": "alpha"
+  },
+  "app": "app0.js",
+  "app.args": "-debug",
+  "pid": "/var/run/my-node-service.pid",
+  "log": "ignored - /var/log/my-node-service/log",
+  "error": "ignored - /var/log/my-node-service/error",
+  "engine": "node",
+  "engine.bin": "/usr/bin/node",
+  "engine.args": "--harmony",
+  "logrotate": true,
+  "logrotate.rotate": "1",
+  "logrotate.frequency": "weekly"
+}

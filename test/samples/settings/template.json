@@ -1,0 +1,22 @@
+{
+  "name": "my-node-service",
+  "description": "an amazing service",
+  "author": "John Smith",
+  "cwd": "/node/my-node-service/",
+  "user": "www-data",
+  "group": "www-data",
+  "env": {
+    "VAR_NAME": "VAR_VALUE"
+  },
+  "app": "main.js",
+  "app.args": "-debug",
+  "pid": "/var/run/my-node-service.pid",
+  "log": "/var/log/my-node-service/log",
+  "error": "/var/log/my-node-service/error",
+  "engine": "node",
+  "engine.bin": "/usr/bin/node",
+  "engine.args": "",
+  "logrotate": true,
+  "logrotate.rotate": "10",
+  "logrotate.frequency": "daily"
+}

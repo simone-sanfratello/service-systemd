@@ -1,0 +1,19 @@
+{
+  "name": "app0-forever-min",
+  "description": "an amazing service",
+  "author": "John Smith",
+  "cwd": "test/samples/apps/",
+  "env": {
+    "PORT": "3003",
+    "ENV": "alpha"
+  },
+  "app": "app0.js",
+  "app.args": "-debug",
+  "pid": "/var/run/my-node-service.pid",
+  "log": "/var/log/my-node-service/log",
+  "error": "/var/log/my-node-service/error",
+  "engine": "forever",
+  "logrotate": true,
+  "logrotate.rotate": "1",
+  "logrotate.frequency": "weekly"
+}

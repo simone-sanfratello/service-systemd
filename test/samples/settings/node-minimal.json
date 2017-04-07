@@ -1,0 +1,13 @@
+{
+  "name": "app0-minimal-node",
+  "description": "an amazing service",
+  "cwd": "test/samples/apps/",
+  "user": "www-data",
+  "group": "www-data",
+  "app": "app1.js",
+  "env": {
+    "PORT": "3002",
+    "ENV": "alpha"
+  },
+  "logrotate": true
+}

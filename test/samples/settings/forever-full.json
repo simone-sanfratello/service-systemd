@@ -1,0 +1,22 @@
+{
+  "name": "app0-full-forever",
+  "description": "an amazing service",
+  "author": "John Smith",
+  "cwd": "test/samples/apps/",
+  "user": "www-data",
+  "group": "www-data",
+  "env": {
+    "PORT": "3004",
+    "ENV": "alpha"
+  },
+  "app": "app0.js",
+  "app.args": "-debug",
+  "pid": "/var/run/my-node-service.pid",
+  "log": "/var/log/my-node-service/log",
+  "error": "/var/log/my-node-service/error",
+  "engine": "forever",
+  "engine.bin": "/usr/bin/forever",
+  "logrotate": true,
+  "logrotate.rotate": "1",
+  "logrotate.frequency": "weekly"
+}
