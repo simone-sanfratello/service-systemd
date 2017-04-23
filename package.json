@@ -1,6 +1,6 @@
 {
   "name": "service-systemd",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "Setup node.js app as systemd service",
   "files": [
     "bin/*",
