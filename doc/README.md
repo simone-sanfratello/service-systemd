@@ -12,9 +12,9 @@
 
 # Installing
 
-```
+````bash
 $ npm i -g service-systemd
-```
+````
 
 # Getting Started
 
