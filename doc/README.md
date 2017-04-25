@@ -232,13 +232,13 @@ json ``"engine": "node|forever"``
 Service engine binary  
 Declare if different from usually /usr/bin/node or /usr/bin/forever  
 default "/usr/bin/{engine}"  
-command-line ``-b, --engine.bin [bin]``
+command-line ``-b, --engine.bin [bin]``  
 json ``"engine.bin": "/path/to/bin"``
 
 - **Engine args**  
 Service engine args  
 Supply additional arguments to ``forever`` or ``node``  
-command-line ``-t, --engine.args [args]``
+command-line ``-t, --engine.args [args]``  
 json ``"engine.bin": "/path/to/bin"``
 
 - **Logrotate**  
