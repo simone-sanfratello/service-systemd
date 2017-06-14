@@ -7,17 +7,17 @@
 
 [![JS Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-Setup node.js app as systemd service, so can do 
+Setup node.js app as systemd service, so you can do 
 
-```
-$ sudo service my-node-service start | stop | restart
-```
+````bash
+$ sudo service my-node-service [start | stop | restart]
+````
 
 ## Installing
 
-```
+````bash
 $ npm i -g service-systemd
-```
+````
 
 ### Quick start
 

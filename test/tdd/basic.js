@@ -32,17 +32,7 @@ const samples = {
         path.join(__dirname, '../samples/settings', 'node-full.json'),
         path.join(__dirname, '../samples/settings', 'node-minimal.json')
       ]
-    /*
-    cli: {
-      apps: {
-        // server0: path.join(__dirname, '../samples/apps', 'app0.js'),
-        // server1: path.join(__dirname, '../samples/apps', 'app1.js')
-      },
-      minimal: [],
-      full: [],
-      something: []
-    }
-    */
+      // @todo cli
     },
     forever: {
       settings: [
