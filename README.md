@@ -79,6 +79,10 @@ See [documentation](./doc/README.md) for further informations.
 
 ## Changelog
 
+v. 3.1.3
+
+- Fix logrotate settings
+
 v. 3.1.0
 
 - Add support for module use
