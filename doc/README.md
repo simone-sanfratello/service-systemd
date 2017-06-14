@@ -243,9 +243,9 @@ json ``"engine.bin": "/path/to/bin"``
 
 - **Logrotate**  
 Add logrotate config  
-Will be written a logrotate file as {name}.conf in logrotate config dir.  
-default "true"  
-command-line ``-L, --logrotate``  
+Will be written a logrotate file as {name}.conf in logrotate config dir ``/etc/logrotate.d``.  
+default "false"  
+command-line ``-l, --logrotate``  
 json ``"logrotate": true|false``
 
 - **Logrotate rotate**  

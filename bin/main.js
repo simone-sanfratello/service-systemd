@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 'use strict'
 
+const tools = require('a-toolbox')
+
 const setup = require('../lib/setup')
 
 // check user
-if (!setup.checkUser(process.env.USER)) {
+if (!tools.sys.isRoot()) {
   setup.fail('Supercow powers needed... (run as root or sudo user)')
   process.exit(-1)
 }
