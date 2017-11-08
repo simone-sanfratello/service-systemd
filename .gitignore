@@ -9,6 +9,7 @@
 # logs
 *.log
 *tgz
+package-lock.json
 
 # sys and temp files
 *Thumbs.db
