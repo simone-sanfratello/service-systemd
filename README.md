@@ -3,8 +3,6 @@
 [![NPM Version](http://img.shields.io/npm/v/service-systemd.svg?style=flat)](https://www.npmjs.org/package/service-systemd)
 [![NPM Downloads](https://img.shields.io/npm/dm/service-systemd.svg?style=flat)](https://www.npmjs.org/package/service-systemd)
 
-[![NPM](https://nodei.co/npm-dl/service-systemd.png)](https://nodei.co/npm/service-systemd/)
-
 [![JS Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 Setup node.js app as systemd service, so you can do 
@@ -79,6 +77,10 @@ See [documentation](./doc/README.md) for further informations.
 
 ## Changelog
 
+v. 3.2
+
+- jsdoc documentation
+
 v. 3.1.3
 
 - Fix logrotate settings
@@ -91,7 +93,7 @@ v. 3.0.0
 
 - All settings can be passed by command line
 - Settings can have pseudo-template string like {ervice} or {engine} es. engine.bin
-- Renamed binary form ``service-systemd`` to ``service-systemd``
+- Renamed binary to ``service-systemd``
 - Renamed settings from ``wrap`` to ``engine``
 - Renamed settings from ``path`` to ``cwd``
 - Renamed settings from ``script`` to ``app``
@@ -100,16 +102,15 @@ v. 3.0.0
 
 ## TODO
 
-- test tdd
-- jsdoc documentation
-- test bdd
-- rollback on error during ``add``
-- run multiple instances
-- check input settings usign ``checkv``
-- add support for ``crontab`` dependents scripts
-- check ``systemd`` on board
-- add ``pm2`` as engine option
-- setup ``nginx`` configuration adding new site (add nginx settings)
+- [ ] setup ``nginx`` configuration adding new site (add nginx settings)
+- [ ] rollback on error during ``add``
+- [ ] run multiple instances
+- [ ] check input settings usign ``checkv``
+- [ ] add support for ``crontab`` dependents scripts
+- [ ] check ``systemd`` on board
+- [ ] add ``pm2`` as engine option
+- [ ] test tdd
+- [ ] test bdd
 
 ---
 

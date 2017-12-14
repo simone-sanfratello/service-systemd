@@ -19,7 +19,7 @@
     "test": "test"
   },
   "dependencies": {
-    "a-toolbox": "^0.1.x",
+    "a-toolbox": "^0.x",
     "bluebird": "^3.5.x",
     "child-process-promise": "^2.2.x",
     "commander": "^2.11.x",
@@ -28,11 +28,13 @@
   },
   "devDependencies": {
     "standard": "^x",
-    "tap": "^x",
-    "vows": "^x"
+    "tap": "^10.x",
+    "vows": "^x",
+    "ink-docstrap": "^1.3.x"
   },
   "scripts": {
-    "test": "standard && tap test/tdd/*"
+    "test": "standard && tap test/tdd/*",
+    "doc": "jsdoc -c jsdoc.json -t ./node_modules/ink-docstrap/template lib/setup.js"
   },
   "repository": {
     "type": "git",
