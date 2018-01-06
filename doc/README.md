@@ -183,55 +183,55 @@ json ``"app": "main.js"``
 
 - **Application working directory (cwd)**  
 Application working directory  
-command-line ``-c, --cwd [path]``
+command-line ``-c, --cwd [path]``  
 json ``"cwd": "/path/to"``
 
 - **Application arguments**  
 Arguments to pass to application file  
-command-line ``-p, --app.args [args]``
+command-line ``-p, --app.args [args]``  
 json ``"app.args": "arg1 arg2 arg3"``
 
 - **Environment variables**  
 Environment variables to set in systemd job  
-command-line ``-e, --env [NAME=VALUE]``  
+command-line ``-e, --env [NAME=VALUE]``   
 json ``"env": {"VAR1": 1, "VAR2": "value2"}``
 
 - **PID**  
 Service pid file  
 default "/var/run/{name}.pid"  
-command-line ``-P, --pid [file]``
+command-line ``-P, --pid [file]``  
 json ``"pid": "/path/to/pid"``
 
 - **Log file**  
 Service log file  
 default "/var/log/{name}/log"  
-command-line ``-L, --log [file]``
+command-line ``-L, --log [file]``  
 json ``"log": "/path/to/log"``
 
 - **Error file**  
 Service error file  
 default "/var/log/{name}/error"  
-command-line ``-E, --error [file]``
+command-line ``-E, --error [file]``  
 json ``"error": "/path/to/error"``
 
 - **Engine**  
 Service engine (node|forever|pm2)  
 default "node"  
-command-line ``-X, --engine [node|forever|pm2]``
+command-line ``-X, --engine [node|forever|pm2]``  
 json ``"engine": "node|forever|pm2"``  
 
   - **"engine": "node"**  
-  Use node to run your application.
+  Use node to run your application.  
   *Remember to manage logs inside your application*.  
 
   - **"engine": "forever"**  
   Using [forever](http://github.com/foreverjs/forever) allow to use its own tools, like monitoring or redirect stdout and stderr into log files.  
-  Obviously, you need ``forever`` globally installed. 
+  Obviously, you need ``forever`` globally installed.  
   You may also have to specify bin path in ``engine.bin`` (see below) options as  ``/usr/local/bin/forever``.
 
   - **"engine": "pm2"**  
   With [pm2](http://pm2.keymetrics.io/) you can use its tools like monitoring, log file or clustering.  
-  Obviously, you need ``pm2`` globally installed. 
+  Obviously, you need ``pm2`` globally installed.  
   You may also have to specify bin path in ``engine.bin`` (see below) options as  ``/usr/local/bin/pm2``.
 
 - **Engine bin**  
