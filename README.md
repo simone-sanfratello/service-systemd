@@ -71,13 +71,21 @@ service.remove('my-node-service')
 
 ````
 
+## Engines
+
+App can run using engines: ``node`` (default), [forever](https://github.com/foreverjs/forever), [pm2](http://pm2.keymetrics.io). With ``forever`` and ``pm2`` you can use their options and tools.
+
 ## Documentation
 
 See [documentation](./doc/README.md) for further informations.
 
 ## Changelog
 
-v. 3.2
+v. 3.3.0
+
+- Add ``pm2`` as engine option
+
+v. 3.2.0
 
 - jsdoc documentation
 
@@ -92,23 +100,22 @@ v. 3.1.0
 v. 3.0.0
 
 - All settings can be passed by command line
-- Settings can have pseudo-template string like {ervice} or {engine} es. engine.bin
+- Settings can have pseudo-template string like {service} or {engine} es. engine.bin
 - Renamed binary to ``service-systemd``
 - Renamed settings from ``wrap`` to ``engine``
 - Renamed settings from ``path`` to ``cwd``
 - Renamed settings from ``script`` to ``app``
-- Added settings: ``author``, ``engine.args``
+- Added settings: ``author`` and ``engine.args``
 - Use ``logrotate`` settings on ``node`` and ``forever`` engines
 
 ## TODO
 
-- [ ] setup ``nginx`` configuration adding new site (add nginx settings)
+- [ ] check input settings with ``checkv``
+- [ ] check ``systemd`` on board
 - [ ] rollback on error during ``add``
 - [ ] run multiple instances
-- [ ] check input settings usign ``checkv``
+- [ ] setup ``nginx`` configuration adding new site (add nginx settings)
 - [ ] add support for ``crontab`` dependents scripts
-- [ ] check ``systemd`` on board
-- [ ] add ``pm2`` as engine option
 - [ ] test tdd
 - [ ] test bdd
 
@@ -131,7 +138,7 @@ References
 
 The MIT License (MIT)
 
-Copyright (c) 2017, [braces lab](https://braceslab.com)
+Copyright (c) 2017-2018, [braces lab](https://braceslab.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

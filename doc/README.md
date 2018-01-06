@@ -78,9 +78,9 @@ $ sudo service-systemd --help
 -P, --pid [file]                       Service pid file, default /var/run/{name}.pid
 -L, --log [file]                       Service log file, default /var/log/{name}/log
 -E, --error [file]                     Service error file, default /var/log/{name}/error
--X, --engine [node|forever]            Service engine (node|forever), default node
+-X, --engine [node|forever|pm2]        Service engine (node|forever|pm2), default node
 -b, --engine.bin [bin]                 Service engine bin, default /usr/bin/{engine}
--t, --engine.args [args]               Service engine args
+-t, --engine.args [eargs]              Service engine args
 -L, --logrotate                        Add logrotate config
 -R, --logrotate.rotate [rotate]        Logrotate rotations, default 10
 -F, --logrotate.frequency [frequency]  Logrotate frequency, default daily
@@ -215,10 +215,10 @@ command-line ``-E, --error [file]``
 json ``"error": "/path/to/error"``
 
 - **Engine**  
-Service engine (node|forever)  
+Service engine (node|forever|pm2)  
 default "node"  
-command-line ``-X, --engine [node|forever]``
-json ``"engine": "node|forever"``  
+command-line ``-X, --engine [node|forever|pm2]``
+json ``"engine": "node|forever|pm2"``  
 
   - **"engine": "node"**  
   Use node to run your application.
@@ -226,20 +226,27 @@ json ``"engine": "node|forever"``
 
   - **"engine": "forever"**  
   Using [forever](http://github.com/foreverjs/forever) allow to use its own tools, like monitoring or redirect stdout and stderr into log files.  
-  Obviously, you need ``forever`` globally installed.
+  Obviously, you need ``forever`` globally installed. 
+  You may also have to specify bin path in ``engine.bin`` (see below) options as  ``/usr/local/bin/forever``.
+
+  - **"engine": "pm2"**  
+  With [pm2](http://pm2.keymetrics.io/) you can use its tools like monitoring, log file or clustering.  
+  Obviously, you need ``pm2`` globally installed. 
+  You may also have to specify bin path in ``engine.bin`` (see below) options as  ``/usr/local/bin/pm2``.
 
 - **Engine bin**  
 Service engine binary  
-Declare if different from usually /usr/bin/node or /usr/bin/forever  
+Declare if different from tipical ``/usr/bin/{engine}`` - may be ``/usr/local/bin/{engine}``  
 default "/usr/bin/{engine}"  
 command-line ``-b, --engine.bin [bin]``  
 json ``"engine.bin": "/path/to/bin"``
 
 - **Engine args**  
 Service engine args  
-Supply additional arguments to ``forever`` or ``node``  
-command-line ``-t, --engine.args [args]``  
-json ``"engine.bin": "/path/to/bin"``
+Supply additional arguments to engine (``forever`` or ``node`` or ``pm2``).
+On command line, should be something like (note spaces) ``-t " --arg1 v1 -arg2"``  
+command-line ``-t, --engine.args [eargs]``  
+json ``"engine.args": "--arg1 v1 -arg2"``
 
 - **Logrotate**  
 Add logrotate config  
