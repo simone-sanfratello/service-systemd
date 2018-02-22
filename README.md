@@ -116,8 +116,9 @@ v. 3.0.0
 - [ ] run multiple instances
 - [ ] setup ``nginx`` configuration adding new site (add nginx settings)
 - [ ] add support for ``crontab`` dependents scripts
-- [ ] test tdd
-- [ ] test bdd
+- [ ] test bdd / via tollo
+- [ ] travis CI
+- [ ] coverage badge / coverage 100%
 
 ---
 
