@@ -2,6 +2,9 @@
 'use strict'
 
 const tools = require('a-toolbox')
+const log = require('log-segment')
+
+log.set({format: '{marker} [{timestamp}] {message}'})
 
 const setup = require('../lib/setup')
 
