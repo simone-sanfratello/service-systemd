@@ -81,44 +81,8 @@ See [documentation](./doc/README.md) for further informations.
 
 ## Changelog
 
-v. 3.3.0
+See [changelog](./CHANGELOG.md).
 
-- Add ``pm2`` as engine option
-
-v. 3.2.0
-
-- jsdoc documentation
-
-v. 3.1.3
-
-- Fix logrotate settings
-
-v. 3.1.0
-
-- Add support for module use
-
-v. 3.0.0
-
-- All settings can be passed by command line
-- Settings can have pseudo-template string like {service} or {engine} es. engine.bin
-- Renamed binary to ``service-systemd``
-- Renamed settings from ``wrap`` to ``engine``
-- Renamed settings from ``path`` to ``cwd``
-- Renamed settings from ``script`` to ``app``
-- Added settings: ``author`` and ``engine.args``
-- Use ``logrotate`` settings on ``node`` and ``forever`` engines
-
-## TODO
-
-- [ ] check input settings with ``checkv``
-- [ ] check ``systemd`` on board
-- [ ] rollback on error during ``add``
-- [ ] run multiple instances
-- [ ] setup ``nginx`` configuration adding new site (add nginx settings)
-- [ ] add support for ``crontab`` dependents scripts
-- [ ] test bdd / via tollo
-- [ ] travis CI
-- [ ] coverage badge / coverage 100%
 
 ---
 
@@ -132,6 +96,7 @@ Similar package
 - [strong-service-systemd](https://github.com/strongloop/strong-service-systemd)
 
 References  
+- https://wiki.archlinux.org/index.php/Systemd
 - https://www.freedesktop.org/software/systemd/man/systemd.exec.html
 
 
