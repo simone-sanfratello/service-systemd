@@ -8,12 +8,6 @@ log.set({format: '{marker} [{timestamp}] {message}'})
 
 const setup = require('../lib/setup')
 
-// check user
-if (!tools.sys.isRoot()) {
-  setup.fail('Supercow powers needed... (run as root or sudo user)')
-  process.exit(-1)
-}
-
 // get args
 const _program = setup.args(process.argv)
 
@@ -24,6 +18,12 @@ if (_program.add && _program.remove) {
 }
 
 if (_program.add) {
+  // check user
+  if (!tools.sys.isRoot()) {
+    setup.fail('Supercow powers needed... (run as root or sudo user)')
+    process.exit(-1)
+  }
+
   setup.add(setup.settings(_program))
     .then((message) => {
       setup.success(message)
@@ -34,6 +34,12 @@ if (_program.add) {
       process.exit(-1)
     })
 } else if (_program.remove) {
+  // check user
+  if (!tools.sys.isRoot()) {
+    setup.fail('Supercow powers needed... (run as root or sudo user)')
+    process.exit(-1)
+  }
+
   setup.remove(_program.service)
     .then((message) => {
       setup.success(message)
