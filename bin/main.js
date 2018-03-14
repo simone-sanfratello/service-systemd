@@ -30,16 +30,15 @@ Promise.resolve().then(() => {
     return setup.add(settings);
   } else if(_program.remove) {
     return setup.remove(_program.service)
-  } else {
+  } else if(_program.print) {
     const settings = setup.settings(_program);
     return setup.makeServiceFile(settings).then(console.log).then(() => process.exit(0))
+  } else {
     _program.help()
-    throw new Error('Missing action: add or remove');
   }
 }).then((message) => {
   setup.success(message)
 }).catch((err) => {
-  console.log(err.stack);
   setup.fail(err.toString())
   process.exit(-1)
 })
