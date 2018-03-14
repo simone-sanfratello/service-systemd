@@ -8,10 +8,11 @@ log.set({format: '{marker} [{timestamp}] {message}'})
 
 const setup = require('../lib/setup')
 
-// check user
-if (!tools.sys.isRoot()) {
-  setup.fail('Supercow powers needed... (run as root or sudo user)')
-  process.exit(-1)
+function assureRoot() {
+  if (!tools.sys.isRoot()) {
+    setup.fail('Supercow powers needed... (run as root or sudo user)')
+    process.exit(-1)
+  }
 }
 
 // get args
@@ -23,28 +24,22 @@ if (_program.add && _program.remove) {
   process.exit(-1)
 }
 
-if (_program.add) {
-  setup.add(setup.settings(_program))
-    .then((message) => {
-      setup.success(message)
-      process.exit(1)
-    })
-    .catch((err) => {
-      setup.fail(err.toString())
-      process.exit(-1)
-    })
-} else if (_program.remove) {
-  setup.remove(_program.service)
-    .then((message) => {
-      setup.success(message)
-      process.exit(1)
-    })
-    .catch((err) => {
-      setup.fail(err.toString())
-      process.exit(-1)
-    })
-} else {
-  _program.help()
-  setup.fail('Missing action: add or remove')
+Promise.resolve().then(() => {
+  if(_program.add) {
+    const settings = setup.settings(_program)
+    return setup.add(settings);
+  } else if(_program.remove) {
+    return setup.remove(_program.service)
+  } else {
+    const settings = setup.settings(_program);
+    return setup.makeServiceFile(settings).then(console.log).then(() => process.exit(0))
+    _program.help()
+    throw new Error('Missing action: add or remove');
+  }
+}).then((message) => {
+  setup.success(message)
+}).catch((err) => {
+  console.log(err.stack);
+  setup.fail(err.toString())
   process.exit(-1)
-}
+})
