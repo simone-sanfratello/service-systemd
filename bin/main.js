@@ -32,7 +32,7 @@ Promise.resolve().then(() => {
     return setup.remove(_program.service)
   } else if(_program.print) {
     const settings = setup.settings(_program);
-    return setup.makeServiceFile(settings).then(console.log).then(() => process.exit(0))
+    return setup.makeServiceFile(settings).then(data => console.log(data.service)).then(() => process.exit(0))
   } else {
     _program.help()
   }
