@@ -34,6 +34,7 @@
   },
   "scripts": {
     "test": "standard && tap test/tdd/*",
+    "sandbox": "docker run --rm -p 5432:5432 postgres:9.6-alpine",
     "doc": "jsdoc -c jsdoc.json -t ./node_modules/ink-docstrap/template lib/setup.js"
   },
   "repository": {
