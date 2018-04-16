@@ -19,7 +19,7 @@
     "test": "test"
   },
   "dependencies": {
-    "a-toolbox": "^1.2.12",
+    "a-toolbox": "^1.4.3",
     "bluebird": "^3.5.1",
     "child-process-promise": "^2.2.1",
     "commander": "^2.14.1",
