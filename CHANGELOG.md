@@ -1,5 +1,12 @@
 # CHANGELOG
 
+v. 4.0.0
+
+- upgrade to node v.10 and dependencies
+- update documentation / drop jsdoc
+- update tests / bdd & tdd
+- ? drop `fs-extra`
+
 v. 3.4.0
 
 - --help work without sudo [#5](https://github.com/braceslab/service-systemd/issues/5)

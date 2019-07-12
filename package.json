@@ -1,6 +1,6 @@
 {
   "name": "service-systemd",
-  "version": "3.4.1",
+  "version": "4.0.0",
   "description": "Setup node.js app as systemd service",
   "files": [
     "bin/*",
@@ -13,28 +13,23 @@
   "keywords": [
     "systemd",
     "service",
-    "deploy"
+    "daemon"
   ],
   "directories": {
     "test": "test"
   },
   "dependencies": {
-    "a-toolbox": "^1.4.3",
-    "bluebird": "^3.5.1",
-    "child-process-promise": "^2.2.1",
-    "commander": "^2.14.1",
-    "fs-extra": "^3.0.1",
-    "log-segment": "^1.7.1"
+    "a-toolbox": "^1.5.6",
+    "commander": "^2.20.0",
+    "fs-extra": "^8.1.0",
+    "log-segment": "^1.7.9"
   },
   "devDependencies": {
-    "ink-docstrap": "^1.x",
-    "standard": "^11.x",
-    "tap": "^10.x",
-    "vows": "^x"
+    "standard": "^13.0.1",
+    "tap": "^14.4.1"
   },
   "scripts": {
-    "test": "standard && tap test/tdd/*",
-    "doc": "jsdoc -c jsdoc.json -t ./node_modules/ink-docstrap/template lib/setup.js"
+    "test": "standard && tap test/*"
   },
   "repository": {
     "type": "git",
@@ -43,7 +38,7 @@
   "author": "Simone Sanfratello <simone@braceslab.com>",
   "license": "MIT",
   "engines": {
-    "node": ">= 4"
+    "node": ">= 10"
   },
   "preferGlobal": true,
   "os": [

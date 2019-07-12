@@ -5,16 +5,16 @@
 
 [![JS Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-Setup node.js app as systemd service, so you can do 
+## Purpose
 
-````bash
-$ sudo service my-node-service [start | stop | restart]
-````
+Setup a node.js app as `systemd` service. 
+
+Sometimes you just want an "old style" daemon for tiny services or small devices like a RaspberryPi
 
 ## Installing
 
 ````bash
-$ npm i -g service-systemd
+npm i -g service-systemd
 ````
 
 ### Quick start
@@ -23,51 +23,55 @@ $ npm i -g service-systemd
 
   + pass settings in command line
   ````bash
-  $ sudo service-systemd -a -n my-service -c /path/to/service -A main.js
+  sudo service-systemd -a -n my-service -c /path/to/service -A main.js
   ````
 
   + pass all settings in JSON file
   ````bash
-  $ sudo service-systemd -a -s service.json
+  sudo service-systemd -a -s service.json
   ````
+
+- Run the service
+
+````bash
+sudo service my-service [start | stop | restart]
+````
 
 - Uninstall service
 
 ````bash
-$ sudo service-systemd -r -n myservice
+sudo service-systemd -r -n myservice
 ````
 
-## Using as module
+## Pragmatic use
 
 ````js
 const service = require('service-systemd')
 
 // add service
 
-service.add({
-  name: 'my-node-service',
-  cwd: '/path/to/app',
-  app: 'main.js',
-  env: {
-    PORT: 3002,
-  }
-})
-.then(() => {
+try {
+  await service.add({
+    name: 'my-node-service',
+    cwd: '/path/to/app',
+    app: 'main.js',
+    env: {
+      PORT: 3002,
+    }
+  })
   console.log('my-node-service installed')
-})
-.catch((err) => {
-  console.error('something wrong', err.toString())
-})
+} catch (error) {
+  console.error('something wrong', error)
+}
 
 // remove service
 
-service.remove('my-node-service')
-.then(() => {
+try {
+  await service.remove('my-node-service')
   console.log('my-node-service removed')
-})
-.catch((err) => {
-  console.error('something wrong', err.toString())
-})
+} catch (error) {
+  console.error('something wrong', error)
+}
 
 ````
 
@@ -83,7 +87,6 @@ See [documentation](./doc/README.md) for further informations.
 
 See [changelog](./CHANGELOG.md).
 
-
 ---
 
 ### Thanks to
@@ -95,16 +98,11 @@ See [changelog](./CHANGELOG.md).
 Similar package  
 - [strong-service-systemd](https://github.com/strongloop/strong-service-systemd)
 
-References  
-- https://wiki.archlinux.org/index.php/Systemd
-- https://www.freedesktop.org/software/systemd/man/systemd.exec.html
-
-
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2017-2018, [braces lab](https://braceslab.com)
+Copyright (c) 2017-2019, [braces lab](https://braceslab.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

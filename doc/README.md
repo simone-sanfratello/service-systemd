@@ -106,20 +106,19 @@ settings is the same as the JSON file
 
 Example  
 ````js
-service.add({
-  name: 'my-node-service',
-  cwd: '/path/to/app',
-  app: 'main.js',
-  env: {
-    PORT: 3002,
-  }
-})
-.then(() => {
+try {
+  await service.add({
+    name: 'my-node-service',
+    cwd: '/path/to/app',
+    app: 'main.js',
+    env: {
+      PORT: 3002,
+    }
+  })
   console.log('my-node-service installed')
-})
-.catch((err) => {
-  console.error('something wrong', err.toString())
-})
+} catch (error) {
+  console.error('something wrong', error.toString())
+}
 ````
 
 #### remove
@@ -130,13 +129,12 @@ service.add({
 
 Example  
 ````js
-service.remove('my-node-service')
-.then(() => {
+try {
+  await service.remove('my-node-service')
   console.log('my-node-service removed')
-})
-.catch((err) => {
-  console.error('something wrong', err.toString())
-})
+} catch (error) {
+  console.error('something wrong', error.toString())
+}
 
 ````
 
@@ -376,7 +374,7 @@ $ sudo service-systemd -a -s file.json -e PORT=23456 -p debug
 
 # OS
 
-The package is tested on
+The package is tested on @todo
 - Debian 8.x
 - Ubuntu 16.x
 
