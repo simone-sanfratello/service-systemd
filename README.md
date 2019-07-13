@@ -7,10 +7,10 @@
 
 ## Purpose
 
-Setup a node.js app as `systemd` service. 
+Setup a node.js app as `systemd` service.  
 
 Sometimes you just want an "old style" daemon for simple services.  
-Sometimes you have to deploy in small devices (like a RaspberryPi) and you can't use Docker and all the band.
+Sometimes you have to deploy in small devices (like a RaspberryPi) and you can't use Docker and all the band.  
 
 ## Installing
 
@@ -59,8 +59,8 @@ try {
     cwd: '/path/to/app',
     app: 'main.js',
     env: {
-      NODE_ENV=prod
-      PORT: 3002,
+      NODE_ENV: 'prod',
+      PORT: 3002
     }
   })
   console.log('my-service installed')
@@ -127,9 +127,6 @@ v. 4.1
 [Chris Lea](https://github.com/chrislea) for these articles
 - https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1
 - https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-2
-
-Similar package  
-- [strong-service-systemd](https://github.com/strongloop/strong-service-systemd)
 
 ## License
 
