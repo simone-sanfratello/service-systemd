@@ -19,7 +19,7 @@ if (_program.add && _program.remove) {
 
 if (_program.add) {
   // check user
-  if (!tools.sys.isRoot()) {
+  if (!_program.noroot && !tools.sys.isRoot()) {
     setup.fail('Supercow powers needed... (run as root or sudo user)')
     process.exit(-1)
   }
@@ -35,7 +35,7 @@ if (_program.add) {
     })
 } else if (_program.remove) {
   // check user
-  if (!tools.sys.isRoot()) {
+  if (!_program.noroot && !tools.sys.isRoot()) {
     setup.fail('Supercow powers needed... (run as root or sudo user)')
     process.exit(-1)
   }

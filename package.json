@@ -1,6 +1,6 @@
 {
   "name": "service-systemd",
-  "version": "4.0.0",
+  "version": "3.5.0",
   "description": "Setup node.js app as systemd service",
   "files": [
     "bin/*",
@@ -15,11 +15,9 @@
     "service",
     "daemon"
   ],
-  "directories": {
-    "test": "test"
-  },
   "dependencies": {
     "a-toolbox": "^1.5.6",
+    "child-process-promise": "^2.2.1",
     "commander": "^2.20.0",
     "fs-extra": "^8.1.0",
     "log-segment": "^1.7.9"

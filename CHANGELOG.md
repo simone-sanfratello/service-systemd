@@ -1,6 +1,6 @@
 # CHANGELOG
 
-v. 4.0.0
+v. 3.5.0
 
 - upgrade to node v.10
 - update dependencies

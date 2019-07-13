@@ -9,7 +9,8 @@
 
 Setup a node.js app as `systemd` service. 
 
-Sometimes you just want an "old style" daemon for tiny services or small devices like a RaspberryPi
+Sometimes you just want an "old style" daemon for simple services.  
+Sometimes you have to deploy in small devices (like a RaspberryPi) and you can't use Docker and all the band.
 
 ## Installing
 
@@ -23,12 +24,12 @@ npm i -g service-systemd
 
   + pass settings in command line (see full [documentation](./doc/README.md) for all options)
   ````bash
-  sudo service-systemd -a -n my-service -c /path/to/service -A main.js
+  sudo service-systemd --add --service my-service --cwd /path/to/service --app main.js
   ````
 
   + pass all settings in JSON file
   ````bash
-  sudo service-systemd -a -s service.json
+  sudo service-systemd --add --settings service.json
   ````
 
 - Run the service
@@ -42,7 +43,7 @@ sudo service my-service restart
 - Uninstall service
 
 ````bash
-sudo service-systemd -r -n my-service
+sudo service-systemd --remove --service my-service
 ````
 
 ## Programmatic usage
@@ -58,6 +59,7 @@ try {
     cwd: '/path/to/app',
     app: 'main.js',
     env: {
+      NODE_ENV=prod
       PORT: 3002,
     }
   })
@@ -91,15 +93,32 @@ See [changelog](./CHANGELOG.md).
 
 ## TODO
 
+v. 3.6
+
 - [ ] test suite
+
+v. 3.7
+
 - [ ] show examples in `--help`
-- [ ] replace `commander` with `yargs` and rename args
-- [ ] add `EnvironmentFile`
 - [ ] get `bin/node` location by `which node`
-- [ ] run multiple instances
-- [ ] rollback on error
+- [ ] replace `log-segment`
+
+v. 3.8
+
+- [ ] add `EnvironmentFile`
 - [ ] check if `systemd` is on board
-- [ ] ? drop `fs-extra` and use `fs.promises`
+
+v. 3.9
+
+- [ ] rollback on error
+
+v. 4.0
+
+- [ ] replace `commander` with `yargs` and rename args
+
+v. 4.1
+
+- [ ] run multiple instances
 
 ---
 

@@ -1,11 +1,31 @@
+
+/*
+### success test flow
+install vm with vagrant (foreach system: debian 8 9, ubuntu 16 18, centos ..?)
+setup service (using: cli or json file)
+for each engine (node, pm2, forever)
+start/restart/stop service + ping service
+remove service
+start/restart/stop service + ping service
+*/
+
+/*
+### errors
+wrong params
+missing systemd
+missing node
+missing sudo grants
+missing engine
+*/
+
 'use strict'
 
 const path = require('path')
-const Promise = require('bluebird')
+// const Promise = require('bluebird')
 const tap = require('tap')
 const log = require('log-segment')
 
-const setup = require('../../lib/setup')
+const setup = require('../lib/setup')
 
 /**
  * @todo check wrote script (content) and systemdctl to pass

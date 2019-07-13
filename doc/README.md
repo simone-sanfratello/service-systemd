@@ -13,7 +13,7 @@
 # Installing
 
 ````bash
-$ npm i -g service-systemd
+npm i -g service-systemd
 ````
 
 # Getting Started
@@ -22,24 +22,30 @@ $ npm i -g service-systemd
 
   + pass settings in command line
   ````bash
-  $ sudo service-systemd -a -n my-service -c /path/to/service -A app.js
+  sudo service-systemd --add --service my-service --cwd /path/to/service --app app.js
+  # same as
+  sudo service-systemd -a -n my-service -c /path/to/service -A app.js
   ````
 
   + pass all settings in JSON file
   ````bash
-  $ sudo service-systemd -a -s service.json
+  sudo service-systemd --add --settings service.json
+  # same as
+  sudo service-systemd -a -s service.json
   ````
 
 - Uninstall service
 
 ````bash
-$ sudo service-systemd -r -n myservice
+sudo service-systemd --remove --service myservice
+# same as
+sudo service-systemd -r -n myservice
 ````
 
 # Methods
 
 ````bash
-$ sudo service-systemd [method] [settings]
+sudo service-systemd [method] [settings]
 ````
 
 ``service-systemd`` has 2 method: ``add`` and ``remove``.
@@ -51,14 +57,14 @@ $ sudo service-systemd [method] [settings]
   remove the service, provide service name
 
   ````bash
-  $ sudo service-systemd -r -n myservice
-  $ sudo service-systemd --remove --service myservice
+  sudo service-systemd -r -n myservice
+  sudo service-systemd --remove --service myservice
   ````
 
 # Bin
 
 ````bash
-$ sudo service-systemd --help
+sudo service-systemd --help
 
 -h, --help                             output usage information
 -V, --version                          output the version number
@@ -84,6 +90,7 @@ $ sudo service-systemd --help
 -L, --logrotate                        Add logrotate config
 -R, --logrotate.rotate [rotate]        Logrotate rotations, default 10
 -F, --logrotate.frequency [frequency]  Logrotate frequency, default daily
+-w, --noroot                           Skip check for root permission
 ````
 
 # Module
@@ -275,7 +282,7 @@ See the template files in [test/samples/settings](./test/samples/settings)
 Collect all settings in a JSON file and pass via command-line.
 
 ````bash
-$ sudo service-systemd -a -s file.json
+sudo service-systemd -a -s file.json
 ````
 
 ### JSON file settings examples
@@ -345,20 +352,20 @@ $ sudo service-systemd -a -s file.json
 - minimal
 
 ````bash
-$ sudo service-systemd -a -n my-service -c /path/to/service
+sudo service-systemd -a -n my-service -c /path/to/service
 ````
 
 - basic
 
 ````bash
-$ sudo service-systemd -a -n my-service -c /path/to/service \
+sudo service-systemd -a -n my-service -c /path/to/service \
   -L false -k "John Doe" -e PORT=5543 -X forever
 ````
 
 - long name arguments
 
 ````bash
-$ sudo service-systemd --add --service my-service \
+sudo service-systemd --add --service my-service \
   --cwd /path/to/service --logrotate false \
   --author "John Doe" --env PORT=5543 --engine forever
 ````
@@ -368,7 +375,7 @@ $ sudo service-systemd --add --service my-service \
 Use a settings JSON and override some params
 
 ````bash
-$ sudo service-systemd -a -s file.json -e PORT=23456 -p debug
+sudo service-systemd -a -s file.json -e PORT=23456 -p debug
 ````
 
 
