@@ -1,8 +1,8 @@
 {
-  "name": "my-node-service",
+  "name": "my-service",
   "description": "an amazing service",
   "author": "John Smith",
-  "cwd": "/node/my-node-service/",
+  "cwd": "/node/my-service/",
   "user": "www-data",
   "group": "www-data",
   "env": {
@@ -10,9 +10,9 @@
   },
   "app": "main.js",
   "app.args": "-debug",
-  "pid": "/var/run/my-node-service.pid",
-  "log": "/var/log/my-node-service/log",
-  "error": "/var/log/my-node-service/error",
+  "pid": "/var/run/my-service.pid",
+  "log": "/var/log/my-service/log",
+  "error": "/var/log/my-service/error",
   "engine": "node",
   "engine.bin": "/usr/bin/node",
   "engine.args": "",

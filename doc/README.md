@@ -108,14 +108,14 @@ Example
 ````js
 try {
   await service.add({
-    name: 'my-node-service',
+    name: 'my-service',
     cwd: '/path/to/app',
     app: 'main.js',
     env: {
       PORT: 3002,
     }
   })
-  console.log('my-node-service installed')
+  console.log('my-service installed')
 } catch (error) {
   console.error('something wrong', error.toString())
 }
@@ -130,8 +130,8 @@ try {
 Example  
 ````js
 try {
-  await service.remove('my-node-service')
-  console.log('my-node-service removed')
+  await service.remove('my-service')
+  console.log('my-service removed')
 } catch (error) {
   console.error('something wrong', error.toString())
 }
@@ -284,9 +284,9 @@ $ sudo service-systemd -a -s file.json
 
 ````json
 {
-  "name": "my-node-service",
+  "name": "my-service",
   "description": "an amazing service",
-  "cwd": "/node/my-node-service/",
+  "cwd": "/node/my-service/",
   "user": "www-data",
   "group": "www-data",
   "app": "main.js",
@@ -298,10 +298,10 @@ $ sudo service-systemd -a -s file.json
 
 ````json
 {
-  "name": "my-node-service",
+  "name": "my-service",
   "description": "an amazing service",
   "author": "John Smith",
-  "cwd": "/node/my-node-service/",
+  "cwd": "/node/my-service/",
   "user": "www-data",
   "group": "www-data",
   "env": {
@@ -310,9 +310,9 @@ $ sudo service-systemd -a -s file.json
   },
   "app": "main.js",
   "app.args": "-debug",
-  "pid": "/var/run/my-node-service.pid",
-  "log": "/var/log/my-node-service/log",
-  "error": "/var/log/my-node-service/error",
+  "pid": "/var/run/my-service.pid",
+  "log": "/var/log/my-service/log",
+  "error": "/var/log/my-service/error",
   "engine": "node",
   "engine.args": "--harmony",
   "logrotate": true,
@@ -325,16 +325,16 @@ $ sudo service-systemd -a -s file.json
 
 ````json
 {
-  "name": "my-node-service",
+  "name": "my-service",
   "description": "an amazing service",
   "author": "John Smith",
-  "cwd": "/node/my-node-service/",
+  "cwd": "/node/my-service/",
   "user": "www-data",
   "group": "www-data",
   "app": "main.js",
-  "pid": "/var/run/my-node-service.pid",
-  "log": "/var/log/my-node-service/log",
-  "error": "/var/log/my-node-service/error",
+  "pid": "/var/run/my-service.pid",
+  "log": "/var/log/my-service/log",
+  "error": "/var/log/my-service/error",
   "engine": "forever",
   "logrotate": true,
 }

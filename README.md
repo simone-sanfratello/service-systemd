@@ -21,7 +21,7 @@ npm i -g service-systemd
 
 - Install service
 
-  + pass settings in command line
+  + pass settings in command line (see full [documentation](./doc/README.md) for all options)
   ````bash
   sudo service-systemd -a -n my-service -c /path/to/service -A main.js
   ````
@@ -34,16 +34,18 @@ npm i -g service-systemd
 - Run the service
 
 ````bash
-sudo service my-service [start | stop | restart]
+sudo service my-service start
+sudo service my-service stop
+sudo service my-service restart
 ````
 
 - Uninstall service
 
 ````bash
-sudo service-systemd -r -n myservice
+sudo service-systemd -r -n my-service
 ````
 
-## Pragmatic use
+## Programmatic usage
 
 ````js
 const service = require('service-systemd')
@@ -52,14 +54,14 @@ const service = require('service-systemd')
 
 try {
   await service.add({
-    name: 'my-node-service',
+    name: 'my-service',
     cwd: '/path/to/app',
     app: 'main.js',
     env: {
       PORT: 3002,
     }
   })
-  console.log('my-node-service installed')
+  console.log('my-service installed')
 } catch (error) {
   console.error('something wrong', error)
 }
@@ -67,8 +69,8 @@ try {
 // remove service
 
 try {
-  await service.remove('my-node-service')
-  console.log('my-node-service removed')
+  await service.remove('my-service')
+  console.log('my-service removed')
 } catch (error) {
   console.error('something wrong', error)
 }
@@ -86,6 +88,18 @@ See [documentation](./doc/README.md) for further informations.
 ## Changelog
 
 See [changelog](./CHANGELOG.md).
+
+## TODO
+
+- [ ] test suite
+- [ ] show examples in `--help`
+- [ ] replace `commander` with `yargs` and rename args
+- [ ] add `EnvironmentFile`
+- [ ] get `bin/node` location by `which node`
+- [ ] run multiple instances
+- [ ] rollback on error
+- [ ] check if `systemd` is on board
+- [ ] ? drop `fs-extra` and use `fs.promises`
 
 ---
 

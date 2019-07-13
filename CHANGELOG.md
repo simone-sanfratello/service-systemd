@@ -2,10 +2,9 @@
 
 v. 4.0.0
 
-- upgrade to node v.10 and dependencies
-- update documentation / drop jsdoc
-- update tests / bdd & tdd
-- ? drop `fs-extra`
+- upgrade to node v.10
+- update dependencies
+- update documentation, drop jsdoc
 
 v. 3.4.0
 
